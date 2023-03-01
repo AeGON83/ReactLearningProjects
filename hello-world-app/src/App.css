@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  color: white;
+}
+
+body {
+  background-color: rgb(45, 40, 40);
+}
+
+.head {
+  padding: 20px;
+  padding-bottom: 0px;
+}
+
+.desc {
+  padding: 0 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.list {
+  margin-left: 30px;
+  padding-top: 20px;
+}
+
+.list li {
+  list-style: none;
+}
+
+.list li::before {
+  content: "\2022";
+  color: aqua;
+  font-size: larger;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
