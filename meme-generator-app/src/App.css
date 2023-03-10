@@ -5,21 +5,24 @@
 
 
 .main {
-  width: 500px;
-  height: 500px;
+  width: 800px;
   /* border-radius: 15px; */
-  overflow: hidden;
   background-color: #242424;
-  position: absolute;
-  top: 50%;
+  position: relative;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+.main-generator {
+  width: 100%;
+  background-color: #242424;
+  position: relative;
 }
 
 .header-bar {
-  width: 500px;
+  width: 100%;
   height: 70px;
-  background-color: aqua;
   display: flex;
   align-items: center;
   background: linear-gradient(to right, #008000, #4CAF50, #8BC34A);
@@ -38,74 +41,122 @@
 }
 
 .header-bar p {
+  display: flex;
+  align-items: center;
   margin-left: auto;
   padding: 15px;
   font-weight: 500;
+  position: relative;
+  left: -20px;
+}
+
+.fa-react {
+  color: cyan;
+  margin: 5px;
+  font-size: xx-large;
 }
 
 .input-form {
   position: relative;
   width: 100%;
-  height: 150px;
 }
 
 .inputs {
   display: flex;
   justify-content: space-around;
-  height: 75px;
   align-items: center;
 
 }
 
-.inputs input {
+
+.inputs input,
+.button-container input {
   all: unset;
   text-indent: 8px;
   border: solid 1.5px grey;
   border-radius: 5px;
-  width: 40%;
   height: 35px;
+  width: 40%;
 }
 
-.inputs input:focus {
+.inputs input {
+  margin: 25px 0;
+  margin-bottom: 12.5px;
+}
+
+.inputs input:focus,
+.button-container input:focus {
   border: solid 2px rgba(255, 255, 255, 0.5);
 }
 
 
-.get-img {
+.button-container {
+  margin: 25px 0;
+  margin-top: 12.5px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border-radius: 5px;
+  height: 35px;
+  position: relative;
+  /* left: 50%;
+  transform: translate(-50%, 0); */
+}
+
+#imgInput {
+  width: 40%;
+}
+
+.main-button-container {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.get-img,
+.download-img {
   all: unset;
-  width: 90%;
   border-radius: 5px;
   text-align: center;
-  height: 35px;
-  position: absolute;
-  top: 62.5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 38px;
+  font-size: 15px;
   background-color: #008000;
   background: linear-gradient(to right, #4CAF50, #8BC34A);
   font-weight: 500;
 }
 
-.get-img:active {
+.get-img {
+  width: 70%;
+}
+
+.download-img {
+  width: 20%;
+  font-size: larger;
+}
+
+.get-img:active,
+.download-img:active {
   background: linear-gradient(to left, #4CAF50, #8BC34A);
 }
 
 .img-container {
   width: 90%;
-  height: calc(100% - 256px);
+  height: auto;
   margin: auto;
   position: relative;
   border-radius: 10px;
   border: solid 2px rgba(255, 255, 255, 0.5);
+  overflow: hidden;
 }
 
 .meme-img {
-  width: 440px;
-  height: 240px;
+  width: 430px;
   object-fit: contain;
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #top-text,
@@ -113,7 +164,9 @@
   position: absolute;
   z-index: 1;
   text-align: center;
-  width: 100%;
+  width: 95%;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 30px;
   font-weight: 900;
   stroke: 10px solid black;
@@ -128,4 +181,162 @@
 
 #bottom-text {
   bottom: 2%;
+}
+
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#spare-div {
+  width: 100%;
+  height: 30px;
+}
+
+
+
+
+/* Image index styling */
+
+.main-img-box {
+  width: 100%;
+}
+
+.main-img-box h1 {
+  position: relative;
+  padding: 0 0 20px 0;
+  text-align: center;
+
+}
+
+.ref-container {
+  border-radius: 10px;
+  width: 90%;
+  margin: auto;
+  border: solid 2px rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.ref-img-mini-container {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  margin: 5px;
+}
+
+.index-of-img {
+  position: absolute;
+  margin: 5px;
+  background-color: #8BC34A;
+  border: solid 1px white;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  width: 30px;
+}
+
+.ref-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+
+/* Responsive */
+
+
+
+/* Styles for screens smaller than 600px */
+
+@media only screen and (max-width: 600px) {
+  .main {
+    width: 100%;
+  }
+
+
+  .header-bar p {
+    font-size: smaller;
+  }
+
+  .fa-react {
+    color: cyan;
+    margin: 5px;
+    font-size: x-large;
+  }
+
+  .inputs {
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .inputs input,
+  .button-container input {
+    width: 90%;
+    margin: 5px;
+
+  }
+
+
+  .button-container {
+    position: relative !important;
+    flex-wrap: wrap;
+    top: -10px;
+  }
+
+  .button-container input {
+    margin: 5px !important;
+    width: 90% !important;
+  }
+
+  .main-button-container {
+    margin: 5px;
+    font-size: 10px;
+    width: 90% !important;
+    align-items: center;
+  }
+
+  .img-container {
+    margin-top: 60px;
+    width: 88%;
+  }
+
+  .ref-img-mini-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .ref-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .index-of-img {
+    scale: 0.7;
+    margin: 2px;
+  }
+
+  .ref-container {
+    flex-wrap: wrap;
+    width: 88% !important;
+
+  }
+
+  .get-img {
+    width: 75%;
+  }
+
+  .download-img {
+    width: 20%;
+    font-size: larger;
+  }
 }
